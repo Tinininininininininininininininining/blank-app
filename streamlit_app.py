@@ -51,7 +51,7 @@ def parse_uploaded_csv(file):
         header_row_idx = None
         for i, row in df_raw.iterrows():
             row_str = row.astype(str).values
-            if "沙奈朵" in row_str or "比雕恶喷" in row_str:
+            if "沙奈朵" in row_str or "恶喷" in row_str:
                 header_row_idx = i
                 break
         
@@ -225,7 +225,7 @@ with st.sidebar:
     sorted_opponents = sorted([x for x in all_possible_opponents if x != "其它"])
     
     selected_opponents = []
-    default_values = ["沙奈朵", "鬼龙", "密勒顿", "赛富豪", "(无)", "(无)"]
+    default_values = ["沙奈朵", "鬼龙", "密勒顿", "恶喷", "(无)", "(无)"]
     
     for i in range(6):
         options = ["(无)"] + sorted_opponents
